@@ -1,10 +1,12 @@
 name: Refresh processed data
 
 on:
+  push:
+    paths:
+      - ".github/workflows/refresh.yml"
   schedule:
     - cron: "0 12 * * 1"
   workflow_dispatch:
-
 permissions:
   contents: write
 
