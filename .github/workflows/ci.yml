@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip`r`n          cache-dependency-path: pyproject.toml
+          cache: pip
+          cache-dependency-path: pyproject.toml
       - name: Install project and development tools
         run: python -m pip install -e . pytest ruff
       - name: Run tests
@@ -28,4 +29,5 @@ jobs:
         run: ruff check .
       - name: Check formatting
         run: ruff format --check .
+
 

@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip`r`n          cache-dependency-path: pyproject.toml
+          cache: pip
+          cache-dependency-path: pyproject.toml
       - name: Install project
         run: python -m pip install -e .
       - name: Collect and process SGS data
@@ -36,4 +37,5 @@ jobs:
             git commit -m "chore: refresh processed indicators"
             git push
           fi
+
 
