@@ -50,7 +50,7 @@ flowchart LR
 
 O painel permite escolher o período e os indicadores. Exibe KPIs, gráficos Plotly, tabela e download dos dados filtrados em CSV.
 
-A captura do dashboard está pendente. Salve a imagem em `docs/dashboard.png` para incluí-la aqui.
+![Captura do dashboard](docs/dashboard.png)
 
 ## Testes e qualidade
 
@@ -79,4 +79,5 @@ O GitHub Actions coleta os dados toda segunda-feira às 09:00 no horário de Bra
 - A atualização semanal usa o `GITHUB_TOKEN` padrão do Actions, limitado à escrita no conteúdo deste repositório. Nenhum segredo externo é necessário.
 
 Fontes: [API de dados SGS](https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=01%2F01%2F2024&dataFinal=05%2F01%2F2024) · [Limite de consultas diárias no portal do BCB](https://dadosabertos.bcb.gov.br/dataset/1-taxa-de-cambio---livre---dolar-americano-venda---diario).
+
 
