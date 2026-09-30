@@ -104,9 +104,7 @@ def fetch_series(
                     or "data" not in item
                     or "valor" not in item
                 ):
-                    raise ValueError(
-                        f"Malformed row in SGS series {series_code}: expected data and valor"
-                    )
+                    raise ValueError("Malformed SGS row: expected data and valor")
                 try:
                     observation_date = date.fromisoformat(
                         "-".join(reversed(item["data"].split("/")))

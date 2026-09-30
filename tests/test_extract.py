@@ -42,9 +42,7 @@ def test_fetch_series_splits_long_ranges_into_bounded_windows() -> None:
         )
         return httpx.Response(200, json=[])
 
-    end_date = date(2024, 1, 1) + __import__("datetime").timedelta(
-        days=QUERY_WINDOW_DAYS
-    )
+    end_date = date(2024, 1, 1) + timedelta(days=QUERY_WINDOW_DAYS)
     with httpx.Client(transport=httpx.MockTransport(handler)) as client:
         result = fetch_series(1, date(2024, 1, 1), end_date, client=client)
 
