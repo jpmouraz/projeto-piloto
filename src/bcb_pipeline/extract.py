@@ -13,7 +13,6 @@ import pandas as pd
 from bcb_pipeline.config import (
     BACKOFF_BASE_SECONDS,
     BASE_URL,
-    QUERY_WINDOW_DAYS,
     REQUEST_TIMEOUT_SECONDS,
     RETRY_ATTEMPTS,
     SERIES,
@@ -27,7 +26,7 @@ def _date_windows(start_date: date, end_date: date) -> list[tuple[date, date]]:
     windows = []
     window_start = start_date
     while window_start <= end_date:
-        window_end = min(window_start + timedelta(days=QUERY_WINDOW_DAYS - 1), end_date)
+        window_end = min(date(window_start.year, 12, 31), end_date)
         windows.append((window_start, window_end))
         window_start = window_end + timedelta(days=1)
     return windows
