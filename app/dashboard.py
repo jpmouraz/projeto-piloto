@@ -135,7 +135,7 @@ def main() -> None:
         figure.update_layout(margin={"l": 16, "r": 16, "t": 55, "b": 16})
         figure.update_xaxes(tickformat="%b %Y")
         figure.update_yaxes(title_text=unit)
-        st.plotly_chart(figure, use_container_width=True)
+        st.plotly_chart(figure, width="stretch")
 
     st.subheader("Tabela de dados")
     table_labels = {"month": "Mês"}
@@ -143,7 +143,7 @@ def main() -> None:
     display_table = filtered.sort_values("month", ascending=False).rename(
         columns=table_labels
     )
-    st.dataframe(display_table, use_container_width=True, hide_index=True)
+    st.dataframe(display_table, width="stretch", hide_index=True)
     st.download_button(
         "Baixar tabela em CSV",
         data=display_table.to_csv(index=False).encode("utf-8-sig"),
